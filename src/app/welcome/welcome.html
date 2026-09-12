@@ -1,5 +1,23 @@
 <h1> {{name}} {{successMessage}}</h1>
 
 <div class="container">
-    Click <a routerLink="/todolist" class="btn btn-primary">here</a> to manage your todo list.
+    <div class="container">
+        Click <a routerLink="/todolist" class="btn btn-primary">here</a> to manage your todo list.
+
+    </div>
+
+
+    <div class="container">
+
+        Click <a routerLink="/userslist" class="btn btn-primary">here</a> to view the users list.
+    </div>
+
+    <div class="container">
+        click <a routerLink="/logout" class="btn btn-primary">here</a> to logout.
+    </div>
+
+    <div class="container">
+        Click <button class="btn btn-primary" (click)="getWelcomeMessage()">here</button> to go welcome message from backend.
+        {{ userData.firstName }} {{userData.lastName}} {{ welcomeMessage }}
+    </div>
 </div>

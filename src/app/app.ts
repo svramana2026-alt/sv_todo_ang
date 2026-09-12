@@ -7,11 +7,13 @@ import { TodoList } from './todo-list/todo-list';
 import { AppHearder } from './app-hearder/app-hearder';
 import { AppFooter } from './app-footer/app-footer';
 import { Logout } from './logout/logout';
+import { UsersList } from './users-list/users-list';
 
 @Component({
   imports: [
     RouterOutlet, 
-    Welcome, Login, Error, TodoList, AppHearder, AppFooter, Logout
+    Welcome, Login, Error, TodoList, AppHearder, AppFooter, 
+    Logout, UsersList
   ],
   selector: 'app-root',
   styleUrl: './app.css',

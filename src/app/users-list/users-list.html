@@ -1,0 +1,43 @@
+<div class="container">
+
+    <div class="table-scroll">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Gender</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of userList">
+                    <td>{{user.firstName}}</td>
+                    <td>{{user.lastName}}</td>
+                    <td>{{user.emailId}}</td>
+                    <td>{{user.phoneNumber}}</td>
+                    <td>{{user.gender}}</td>
+                </tr>
+                <tr *ngIf="userList.length === 0">
+                    <td colspan="5" class="text-center">No users found.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <nav *ngIf="totalPages > 1" aria-label="Users list pages">
+        <ul class="pagination justify-content-center">
+            <li class="page-item" [class.disabled]="currentPage === 1">
+                <button class="page-link" type="button" (click)="goToPreviousPage()" [disabled]="currentPage === 1" aria-label="Previous page">Previous</button>
+            </li>
+            <li *ngFor="let page of pages" class="page-item" [class.active]="page === currentPage">
+                <button class="page-link" type="button" (click)="goToPage(page)" [attr.aria-current]="page === currentPage ? 'page' : null">{{page}}</button>
+            </li>
+            <li class="page-item" [class.disabled]="currentPage === totalPages">
+                <button class="page-link" type="button" (click)="goToNextPage()" [disabled]="currentPage === totalPages" aria-label="Next page">Next</button>
+            </li>
+        </ul>
+    </nav>
+
+</div>
