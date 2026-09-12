@@ -8,12 +8,14 @@ import { AppHearder } from './app-hearder/app-hearder';
 import { AppFooter } from './app-footer/app-footer';
 import { Logout } from './logout/logout';
 import { UsersList } from './users-list/users-list';
+import { CustomerList } from './customer-list/customer-list';
 
 @Component({
   imports: [
     RouterOutlet, 
     Welcome, Login, Error, TodoList, AppHearder, AppFooter, 
-    Logout, UsersList
+    Logout, UsersList,
+    CustomerList
   ],
   selector: 'app-root',
   styleUrl: './app.css',
